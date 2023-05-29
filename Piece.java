@@ -181,29 +181,25 @@ public class Piece {
         }
 
         public void rotatePiece(){
-            Square farthestToTheLeft = one;
-            if(two.getX() < one.getX()){
-                farthestToTheLeft = two;
-            }
-            if(three.getX() < farthestToTheLeft.getX()){
-                farthestToTheLeft = three;
-            }
-            if(four.getX() < farthestToTheLeft.getX()){
-                farthestToTheLeft = four;
-            }
-            /*
-            // Set to the value of x and y of the center point around which I am rotating
-            int centerOfRotationX;
-            int centerOfRotationY;
-            // Set to the value of the point’s current x and y
-            int oldXLocation;
-            int oldYLocation;
-            // Calculate coordinates of the rotated point
-            int newXLoc = centerOfRotationX – centerOfRotationY + oldYLocation;
-            int newYLoc = centerOfRotationY + centerOfRotationX – oldXLocation;
-            */
+        double x2 = (one.getX() - one.getY() +two.getY())/Constants.SQUARE_WIDTH;
+        double y2 = (one.getY()+ one.getX()-two.getX())/Constants.SQUARE_WIDTH;
+        double x3 = (one.getX() - one.getY() +three.getY())/Constants.SQUARE_WIDTH;
+        double y3 = (one.getY()+ one.getX()-three.getX())/Constants.SQUARE_WIDTH;
+            double x4 = (one.getX() - one.getY() +four.getY())/Constants.SQUARE_WIDTH;
+            double y4 = (one.getY()+ one.getX()-four.getX())/Constants.SQUARE_WIDTH;
+
+        two.setX(x2);
+        two.setY(y2);
+        three.setX(x3);
+        three.setY(y3);
+        four.setX(x4);
+        four.setY(y4);
+
+
+
 
         }
+
         public int Square1X(){
             return (int) one.getX()/Constants.SQUARE_WIDTH;
 
@@ -255,3 +251,4 @@ public class Piece {
             return four;
         }
 }
+
