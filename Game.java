@@ -234,7 +234,6 @@ public class Game {
                     p.getFour().setY(1000);
                 }
             }
-
         }
         public boolean isRightLegal(){
             if(board[p.Square1X()+1][p.Square1Y()].getColor() == Color.BLACK &&
