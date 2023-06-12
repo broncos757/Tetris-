@@ -22,7 +22,6 @@ public class Board {
                 board[i][j] = s;
             }
         }
-
     }
     public Square[][] getBoard(){
         return board;
