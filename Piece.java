@@ -8,7 +8,6 @@ public class Piece {
     private Square[][] b;
     private Board board;
     private int num;
-
     public Piece(int n){
         board = new Board();
         //I could pass this in instead
@@ -22,7 +21,6 @@ public class Piece {
         this.setY(1);
         this.setColor();
     }
-
     public void setColor() {
         int num = (int) (6 * Math.random());
         switch (num) {
